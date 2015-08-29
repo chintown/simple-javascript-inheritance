@@ -104,7 +104,9 @@ Adopted version
       }
     };
     // 2. link prototype
-    ChildClass.prototype = Object.create(ParentClass.prototype); // avoid Class's own props
+    // avoid triggering constructor of ParentClass
+    ChildClass.prototype = Object.create(ParentClass.prototype);
+
     var parentPrototype = ParentClass.prototype;
     var childPrototype = ChildClass.prototype;
     childPrototype.constructor = ChildClass;
