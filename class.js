@@ -28,7 +28,7 @@
     // 1. move constructor to init
     var ChildClass = function() {
       if (this.init) {
-        this.init.apply(this, arguments);
+        this.init.apply(this, arguments); // TODO call super by default?
       }
     };
     // 2. link prototype
